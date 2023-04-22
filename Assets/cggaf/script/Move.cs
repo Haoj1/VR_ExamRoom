@@ -9,11 +9,13 @@ public class Move : MonoBehaviour
 
     private int currentPoint = 0; // Current point index
     private Vector3 targetPosition; // Target position to move towards
-
+    public Animator animator;
     void Start()
     {
         // Set initial target position to the first point
         targetPosition = points[currentPoint].position;
+        animator = GetComponent<Animator>();
+        // animator.Play("turn");
     }
 
     void Update()
@@ -33,7 +35,7 @@ public class Move : MonoBehaviour
             {
                 currentPoint = 0;
             }
-
+            // animator.Play("turn");
             // Set new target position to the next point
             targetPosition = points[currentPoint].position;
         }
