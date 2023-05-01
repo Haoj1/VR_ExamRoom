@@ -9,9 +9,6 @@ public class ShowUIOnButtonPress : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("XR_Menu"))
-        {
-            UI.SetActive(!UI.activeSelf);
-        }
+        
     }
 }

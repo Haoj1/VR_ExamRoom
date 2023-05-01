@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class SwitchAnimations : MonoBehaviour
 {
-    public Animator animator;
+    public GameObject[] characters;
     public string firstAnimation = "sit";
     public string secondAnimation = "write";
 
-    private float animationTime = 5.0f;
-    private float currentTime = 0.0f;
-
     void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.Play(firstAnimation);
+        foreach (GameObject character in characters)
+        {
+            Animator animator = character.GetComponent<Animator>();
+            animator.Play(firstAnimation);
+        }
     }
 
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime >= animationTime)
+       
+    }
+
+    public void SwitchToWriting()
+    {
+        foreach (GameObject character in characters)
         {
+            Animator animator = character.GetComponent<Animator>();
             animator.Play(secondAnimation);
         }
     }

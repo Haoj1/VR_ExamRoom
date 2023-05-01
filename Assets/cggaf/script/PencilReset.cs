@@ -14,4 +14,9 @@ public class PencilReset : MonoBehaviour
             transform.position = resetPosition;
         }
     }
+
+    public void reset()
+    {
+        transform.position = resetPosition;
+    }
 }
